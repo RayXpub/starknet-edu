@@ -8,3 +8,6 @@ libs_path = "lib"
 starknet_cairo_101 = [
     "src/StarknetCairo101.cairo"
 ]
+starknet_cairo_101_b = [
+    "src/StarknetCairo101_b.cairo"
+]

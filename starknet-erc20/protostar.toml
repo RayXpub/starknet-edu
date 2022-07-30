@@ -1,0 +1,40 @@
+["protostar.config"]
+protostar_version = "0.2.6"
+
+["protostar.project"]
+libs_path = "lib"
+
+["protostar.contracts"]
+erc20_test = [    
+    "src/TESTERC20.cairo",
+]
+ecr20_base = [
+    "src/ERC20_base.cairo"
+]
+exercise_solution = [
+    "src/ExerciseSolution.cairo"
+]
+dtk_erc20 = [
+    "src/DTKERC20.cairo"
+]
+exercise_solution_token = [
+    "src/ExerciseSolutionToken.cairo"
+]
+ierc20_solution = [
+    "src/interfaces/IERC20Solution.cairo"
+]
+ierc20 = [
+    "src/interfaces/IERC20.cairo"
+]
+idtk = [
+    "src/interfaces/IDTKERC20.cairo"
+]
+iexercise_solution = [
+    "src/interfaces/IExerciseSolution.cairo"
+]
+iexercise_solution_token = [
+    "src/interfaces/IExerciseSolutionToken.cairo"
+]
+utils = [
+    "src/lib/UTILS.cairo"
+]

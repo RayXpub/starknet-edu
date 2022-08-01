@@ -2,6 +2,8 @@
 pragma solidity 0.8.9;
 
 interface IStarknetCore {
+    function l1ToL2MessageNonce() external view returns (uint256);
+
     /**
       Sends a message to an L2 contract.
 
@@ -11,7 +13,7 @@ interface IStarknetCore {
         uint256 to_address,
         uint256 selector,
         uint256[] calldata payload
-    ) external returns (bytes32);
+    ) external returns (bytes32, uint256);
 
     /**
       Consumes a message that was sent from an L2 contract.

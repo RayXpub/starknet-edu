@@ -10,6 +10,11 @@ const PRIVATE_KEY_1 = process.env.PRIVATE_KEY_1
 const config: HardhatUserConfig = {
   solidity: "0.8.9",
   networks: {
+    hardhat: {
+      forking: {
+        url: GOERLI_ENDPOINT,
+      },
+    },
     goerli: {
       url: GOERLI_ENDPOINT,
       chainId: 5,

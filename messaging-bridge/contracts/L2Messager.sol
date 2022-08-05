@@ -4,8 +4,6 @@ pragma solidity 0.8.9;
 
 import "./interfaces/IStarknetCore.sol";
 
-import "hardhat/console.sol";
-
 contract L2Messager {
     IStarknetCore starknetCore;
     uint256 constant EX2_SELECTOR = 897827374043036985111827446442422621836496526085876968148369565281492581228;

@@ -1,5 +1,5 @@
 ["protostar.config"]
-protostar_version = "0.2.6"
+protostar_version = "0.3.1"
 
 ["protostar.project"]
 libs_path = "lib"
@@ -7,7 +7,4 @@ libs_path = "lib"
 ["protostar.contracts"]
 starknet_cairo_101 = [
     "src/StarknetCairo101.cairo"
-]
-starknet_cairo_101_b = [
-    "src/StarknetCairo101_b.cairo"
 ]

@@ -17,20 +17,20 @@ func constructor{
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
     }():
-    exercises.write(1, 0x384c3281df7a720cea37e211d7f23ed7d1b12a11f0c8921034ed3033c1b1676)
-    exercises.write(2, 0x25c318c0ad58b30f6af6c7fa30d4a947c8d7a230fe163612a25f212024a0b9c)
-    exercises.write(3, 0x266e635b5e1a719c109da8c6812c758e0e92552f9667bbe9c9f7176024eb3b4)
-    exercises.write(4, 0x77d1f63c1fbaecb1e33a9863621d0433a49eb5812033f8d304f07f7efa799bd)
-    exercises.write(5, 0x3e548649388c31876036b67ac53c7241194c7f40d64b3d73e1b50565f21f3e6)
-    exercises.write(6, 0xb5a9527c0a633f974da1ea8762accbd483a5b983bbd07cdd78b695801edc4)
-    exercises.write(7, 0x82654cabc769e476af6b054c2d47998d932aa22ae0a0375d67bb8f5203b000)
-    exercises.write(8, 0x2c270b9e503e0713163a9931d4ea897d7ce04d8d43197c9af9de99673aa172f)
-    exercises.write(9, 0xca4dcf8fc0660f946a47defac47d813aece0f988722db7f5c84caf88802fb1)
-    exercises.write(10, 0x18eb78aeff91b985f2404c80c1bfebef70aa553766492c098a7953b8527e38d)
-    exercises.write(11, 0x1f3e5e931a62d73d214bb67007278d90778a6b70bddb03b16aa2191c5de9806)
-    exercises.write(12, 0x7538058548728450c04a305f6930d9145a18a4214463a12584769fc2b27dfed)
-    exercises.write(13, 0x120d24f5404b09262df3de09d46119beaf1a9ad2b35f7bfe674d8b61bd37447)
-    exercises.write(14, 0x4605d00942bfcae73f9841526440a47415ff0e5aa0aa58587055452d21d7e5f)
+    exercises.write(1, 0x29e2801df18d7333da856467c79aa3eb305724db57f386e3456f85d66cbd58b)
+    exercises.write(2, 0x18ef3fa8b5938a0059fa35ee6a04e314281a3e64724fe094c80e3720931f83f)
+    exercises.write(3, 0x79275e734d50d7122ef37bb939220a44d0b1ad5d8e92be9cdb043d85ec85e24)
+    exercises.write(4, 0x2cca27cae57e70721d0869327cee5cb58098af4c74c7d046ce69485cd061df1)
+    exercises.write(5, 0x399a3fdd57cad7ed2193bdbb00d84553cd449abbdfb62ccd4119eae96f827ad)
+    exercises.write(6, 0x718ece7af4fb1d9c82f78b7a356910d8c2a8d47d4ac357db27e2c34c2424582)
+    exercises.write(7, 0x3a1ad1cde69c9e7b87d70d2ea910522640063ccfb4875c3e33665f6f41d354a)
+    exercises.write(8, 0x15fa754c386aed6f0472674559b75358cde49db8b2aba8da31697c62001146c)
+    exercises.write(9, 0x2b9fcc1cfcb1ddf4663c8e7ac48fc87f84c91a8c2b99414c646900bf7ef5549)
+    exercises.write(10, 0x8415762f4b0b0f44e42ac1d103ac93c3ea94450a15bb65b99bbcc816a9388)
+    exercises.write(11, 0xab5577b9be8948d89dbdba63370a3de92e72a23c4cacaea38b3a74eec3a872)
+    exercises.write(12, 0x24d15e02ddaa19d7ecd77204d35ed9bfff00a0cabc62eb3da5ba7680e44baf9)
+    exercises.write(13, 0x2bae9190076c4252289b8a8671277cef57318192cff20c736808b0c71095895)
+    exercises.write(14, 0xed7ddffe1370fbbc1974ab8122d1d9bd7e3da8d829ead9177ea4249b4caef1)
     return()
 end
 
@@ -217,14 +217,15 @@ func _execute_ex12_a{
     return (1)
 end
 
-func _execute_ex13{
+@external
+func execute_ex13{
         syscall_ptr: felt*, 
         pedersen_ptr: HashBuiltin*,
         range_check_ptr
-    }() -> (success: felt):
+    }(expected_value: felt) -> (success: felt):
     let (_ex_13) = exercises.read(13)
     IEx13.assign_user_slot(contract_address=_ex_13)
-    IEx13.claim_points(contract_address=_ex_13, expected_value=0)
+    IEx13.claim_points(contract_address=_ex_13, expected_value=expected_value)
     return (1)
 end
 
@@ -270,7 +271,6 @@ func validate_various_exercices{
     _execute_ex10()
     _execute_ex11()
     _execute_ex12_a()
-    _execute_ex13()
 
     return ()
 end
